@@ -5,968 +5,558 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lan Le - Expert Webmaster & Digital Support Services</title>
     <meta name="description" content="Professional webmaster and CMS management services in Ho Chi Minh City. 5+ years experience with Jahia, customer support, and project coordination.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #2B4C7E 0%, #1a3460 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #F39C12;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-        }
-
-        .nav-links a:hover {
-            color: #F39C12;
-            background: rgba(243, 156, 18, 0.1);
-        }
-
-        .mobile-menu {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #2B4C7E 0%, #1a3460 100%);
-            color: white;
-            padding: 140px 0 100px;
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            width: 100%;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #F39C12;
-            color: white;
-            padding: 18px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
-        }
-
-        .cta-button:hover {
-            background: #e67e22;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
-        }
-
-        /* About Section - Moved after Hero */
-        .about {
-            padding: 100px 0;
-            background: #F8F9FA;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 50%;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            border: 8px solid white;
-        }
-
-        .about-text h2 {
-            font-size: 2.8rem;
-            color: #2B4C7E;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
-
-        .skill-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 5px solid #F39C12;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 80px 0;
-            background: #2B4C7E;
-            color: white;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .stat-item {
-            padding: 1.5rem;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #F39C12;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Services Section */
-        .services-preview {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .services-preview h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 4rem;
-            color: #2B4C7E;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: #F8F9FA;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            text-align: center;
-            border-top: 5px solid #F39C12;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .service-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            color: #2B4C7E;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .service-card p {
-            color: #555;
-            font-size: 1.1rem;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-            background: #F8F9FA;
-        }
-
-        .pricing h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 4rem;
-            color: #2B4C7E;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .pricing-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .pricing-card.featured {
-            border: 3px solid #F39C12;
-            transform: scale(1.05);
-        }
-
-        .pricing-card.featured::before {
-            content: "Most Popular";
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #F39C12;
-            color: white;
-            padding: 8px 25px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .plan-name {
-            font-size: 1.5rem;
-            color: #2B4C7E;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .plan-price {
-            font-size: 2.5rem;
-            color: #F39C12;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .plan-period {
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        .plan-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .plan-features li {
-            padding: 0.5rem 0;
-            color: #555;
-        }
-
-        .plan-features li::before {
-            content: "✓";
-            color: #F39C12;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .plan-button {
-            background: #2B4C7E;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .plan-button:hover {
-            background: #1a3460;
-        }
-
-        .featured .plan-button {
-            background: #F39C12;
-        }
-
-        .featured .plan-button:hover {
-            background: #e67e22;
-        }
-
-        /* Portfolio Section */
-        .portfolio {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .portfolio h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 4rem;
-            color: #2B4C7E;
-        }
-
-        .case-studies {
-            display: grid;
-            gap: 3rem;
-        }
-
-        .case-study {
-            background: #F8F9FA;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .case-study:hover {
-            transform: translateY(-5px);
-        }
-
-        .case-study h3 {
-            color: #2B4C7E;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .case-study-meta {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .results {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-top: 1.5rem;
-            border-left: 5px solid #F39C12;
-        }
-
-        .testimonial {
-            background: #2B4C7E;
-            color: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            margin-top: 3rem;
-            text-align: center;
-            font-style: italic;
-            font-size: 1.2rem;
-        }
-
-        .testimonial-author {
-            margin-top: 1.5rem;
-            font-weight: 600;
-            color: #F39C12;
-            font-style: normal;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background: #F8F9FA;
-        }
-
-        .contact h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 4rem;
-            color: #2B4C7E;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info {
-            background: #2B4C7E;
-            color: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-        }
-
-        .contact-info h3 {
-            color: #F39C12;
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item span {
-            font-size: 1.5rem;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-        }
-
-        .contact-form h3 {
-            color: #2B4C7E;
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2B4C7E;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #F39C12;
-        }
-
-        .form-group textarea {
-            height: 130px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: #F39C12;
-            color: white;
-            padding: 15px 35px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #e67e22;
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
-        footer {
-            background: #1a3460;
-            color: white;
-            padding: 3rem 0 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            color: #F39C12;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .footer-section a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section a:hover {
-            color: #F39C12;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
-            margin-top: 2rem;
-            opacity: 0.8;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #2B4C7E;
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1rem;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .case-study-meta {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card.featured {
-                transform: none;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        /* Scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Section spacing */
-        section {
-            scroll-margin-top: 80px;
-        }
-    </style>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <nav class="container">
-            <a href="#home" class="logo">Lan Le</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu">☰</button>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#home" class="nav__logo">Lan Le</a>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#services" class="nav__link">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#pricing" class="nav__link">Pricing</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">Portfolio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__close" id="nav-close">
+                    <i class="nav__close-icon">✕</i>
+                </div>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="nav__toggle-icon">☰</i>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Expert Webmaster & Digital Support Services</h1>
-                <p>Helping businesses manage their digital presence with 5+ years of experience in CMS, customer support, and project management</p>
-                <a href="#contact" class="cta-button">Get Free Website Consultation</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/profile.JPG" alt="Lan Le - Professional Photo">
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="hero__container container">
+                <div class="hero__data">
+                    <h1 class="hero__title">
+                        Expert Webmaster & 
+                        <span class="hero__title-accent">Digital Support Services</span>
+                    </h1>
+                    <p class="hero__description">
+                        Helping businesses manage their digital presence with 5+ years of experience 
+                        in CMS, customer support, and project management
+                    </p>
+                    <a href="#contact" class="hero__cta button">
+                        Get Free Website Consultation
+                        <i class="button__icon">→</i>
+                    </a>
                 </div>
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>Hi, I'm Lan Le - Your Digital Operations Specialist with over 5 years of experience as a Webmaster Support Agent and Account Manager. I help businesses streamline their digital operations and solve complex technical challenges.</p>
-                    <p>Currently serving as a Webmaster Support Agent at Ekino Vietnam since 2020, I specialize in managing multi-language content management systems, particularly Jahia CMS. My role involves everything from page template management to troubleshooting complex user issues through Jira ticketing systems.</p>
-                    <p>What sets me apart is my detail-oriented approach to problem-solving, strong organizational skills, and excellent communication in both Vietnamese and English.</p>
+                <div class="hero__background">
+                    <div class="hero__shape hero__shape-1"></div>
+                    <div class="hero__shape hero__shape-2"></div>
+                    <div class="hero__shape hero__shape-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="about__container container">
+                <div class="about__data">
+                    <div class="about__image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face" 
+                             alt="Lan Le - Professional Photo" 
+                             class="about__img">
+                        <div class="about__image-overlay"></div>
+                    </div>
                     
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <strong>Technical Skills:</strong><br>
-                            Jahia CMS, WordPress, Jira, Testing & QA
-                        </div>
-                        <div class="skill-item">
-                            <strong>Soft Skills:</strong><br>
-                            Critical Thinking, Problem Solving, Time Management
-                        </div>
-                        <div class="skill-item">
-                            <strong>Communication:</strong><br>
-                            Customer Support, Training, Cross-team Collaboration
+                    <div class="about__content">
+                        <span class="section__subtitle">About Me</span>
+                        <h2 class="section__title">
+                            Your Digital Operations 
+                            <span class="section__title-accent">Specialist</span>
+                        </h2>
+                        
+                        <p class="about__description">
+                            With over 5 years of experience as a Webmaster Support Agent and Account Manager, 
+                            I help businesses streamline their digital operations and solve complex technical challenges.
+                        </p>
+                        
+                        <p class="about__description">
+                            Currently serving as a Webmaster Support Agent at Ekino Vietnam since 2020, I specialize 
+                            in managing multi-language content management systems, particularly Jahia CMS.
+                        </p>
+                        
+                        <div class="about__skills">
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <div class="skill__icon">💻</div>
+                                    <h4 class="skill__title">Technical Skills</h4>
+                                </div>
+                                <p class="skill__description">Jahia CMS, WordPress, Jira, Testing & QA</p>
+                            </div>
+                            
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <div class="skill__icon">🧠</div>
+                                    <h4 class="skill__title">Soft Skills</h4>
+                                </div>
+                                <p class="skill__description">Critical Thinking, Problem Solving, Time Management</p>
+                            </div>
+                            
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <div class="skill__icon">💬</div>
+                                    <h4 class="skill__title">Communication</h4>
+                                </div>
+                                <p class="skill__description">Customer Support, Training, Cross-team Collaboration</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">Projects Supported</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Client Satisfaction</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2</div>
-                    <div class="stat-label">Languages (Vietnamese/English)</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services-preview">
-        <div class="container">
-            <h2>My Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>CMS Management</h3>
-                    <p>Jahia, WordPress, content updates, and multi-language website management with expert precision and attention to detail.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛠️</div>
-                    <h3>Customer Support</h3>
-                    <p>Hotline management, issue resolution, and comprehensive technical support for your business needs with 4-hour response time.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📋</div>
-                    <h3>Project Coordination</h3>
-                    <p>Working with dev teams, training sessions, and seamless project management from planning to successful delivery.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2>Service Packages</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="plan-name">Basic Support</div>
-                    <div class="plan-price">$45</div>
-                    <div class="plan-period">per hour</div>
-                    <ul class="plan-features">
-                        <li>Technical Support & Issue Resolution</li>
-                        <li>Email Support (24-hour response)</li>
-                        <li>Basic CMS Updates</li>
-                        <li>Bug Testing & Validation</li>
-                        <li>Documentation</li>
-                    </ul>
-                    <a href="#contact" class="plan-button">Get Started</a>
-                </div>
-
-                <div class="pricing-card featured">
-                    <div class="plan-name">CMS Management</div>
-                    <div class="plan-price">$50</div>
-                    <div class="plan-period">per hour</div>
-                    <ul class="plan-features">
-                        <li>Full CMS Management (Jahia/WordPress)</li>
-                        <li>Multi-language Content Support</li>
-                        <li>Priority Support (4-hour response)</li>
-                        <li>Page Template Management</li>
-                        <li>Content Strategy & Planning</li>
-                        <li>Monthly Reports</li>
-                    </ul>
-                    <a href="#contact" class="plan-button">Most Popular</a>
-                </div>
-
-                <div class="pricing-card">
-                    <div class="plan-name">Project Coordination</div>
-                    <div class="plan-price">$60</div>
-                    <div class="plan-period">per hour</div>
-                    <ul class="plan-features">
-                        <li>Full Project Management</li>
-                        <li>Team Training Sessions</li>
-                        <li>Business Analysis & Planning</li>
-                        <li>Cross-team Coordination</li>
-                        <li>Sprint Planning & Validation</li>
-                        <li>Stakeholder Communication</li>
-                    </ul>
-                    <a href="#contact" class="plan-button">Contact Me</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>Portfolio & Case Studies</h2>
-            <div class="case-studies">
-                <div class="case-study">
-                    <h3>Multi-Language CMS Implementation</h3>
-                    <div class="case-study-meta">
-                        <div><strong>Client:</strong> International Retail Company</div>
-                        <div><strong>Project:</strong> E-commerce Platform Content Management</div>
-                        <div><strong>Technologies:</strong> Jahia CMS, Jira, Multi-language content</div>
+        <!-- Stats Section -->
+        <section class="stats section">
+            <div class="stats__container container">
+                <div class="stats__content">
+                    <div class="stat__item">
+                        <div class="stat__number" data-target="5">0</div>
+                        <div class="stat__label">Years Experience</div>
                     </div>
-                    <p><strong>Challenge:</strong> Managing product content across 5 languages in Jahia CMS</p>
-                    <p><strong>Solution:</strong> Developed streamlined content contribution workflows, created custom page templates for product categories, implemented taxonomy structure for better organization, and trained 15 local webmasters on the new system.</p>
-                    <div class="results">
-                        <strong>Results:</strong>
-                        <ul>
-                            <li>40% reduction in content update time</li>
-                            <li>95% user satisfaction rate from training sessions</li>
-                            <li>Zero critical issues in 6 months post-launch</li>
+                    
+                    <div class="stat__item">
+                        <div class="stat__number" data-target="100">0</div>
+                        <div class="stat__label">Projects Supported</div>
+                    </div>
+                    
+                    <div class="stat__item">
+                        <div class="stat__number" data-target="98">0</div>
+                        <div class="stat__label">Client Satisfaction</div>
+                    </div>
+                    
+                    <div class="stat__item">
+                        <div class="stat__number" data-target="2">0</div>
+                        <div class="stat__label">Languages</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services section" id="services">
+            <div class="services__container container">
+                <div class="section__header">
+                    <span class="section__subtitle">What I Do</span>
+                    <h2 class="section__title">
+                        Professional 
+                        <span class="section__title-accent">Services</span>
+                    </h2>
+                </div>
+                
+                <div class="services__content">
+                    <div class="service__card">
+                        <div class="service__icon">🔧</div>
+                        <h3 class="service__title">CMS Management</h3>
+                        <p class="service__description">
+                            Jahia, WordPress, content updates, and multi-language website management 
+                            with expert precision and attention to detail.
+                        </p>
+                        <div class="service__features">
+                            <span class="service__feature">Multi-language Support</span>
+                            <span class="service__feature">Content Strategy</span>
+                            <span class="service__feature">Template Management</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service__card service__card--featured">
+                        <div class="service__badge">Most Popular</div>
+                        <div class="service__icon">🛠️</div>
+                        <h3 class="service__title">Customer Support</h3>
+                        <p class="service__description">
+                            Hotline management, issue resolution, and comprehensive technical support 
+                            for your business needs with 4-hour response time.
+                        </p>
+                        <div class="service__features">
+                            <span class="service__feature">24/7 Support</span>
+                            <span class="service__feature">Issue Tracking</span>
+                            <span class="service__feature">Fast Resolution</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service__card">
+                        <div class="service__icon">📋</div>
+                        <h3 class="service__title">Project Coordination</h3>
+                        <p class="service__description">
+                            Working with dev teams, training sessions, and seamless project management 
+                            from planning to successful delivery.
+                        </p>
+                        <div class="service__features">
+                            <span class="service__feature">Team Training</span>
+                            <span class="service__feature">Sprint Planning</span>
+                            <span class="service__feature">Stakeholder Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing section" id="pricing">
+            <div class="pricing__container container">
+                <div class="section__header">
+                    <span class="section__subtitle">Pricing Plans</span>
+                    <h2 class="section__title">
+                        Choose Your 
+                        <span class="section__title-accent">Package</span>
+                    </h2>
+                </div>
+                
+                <div class="pricing__content">
+                    <div class="pricing__card">
+                        <div class="pricing__header">
+                            <h3 class="pricing__title">Basic Support</h3>
+                            <div class="pricing__price">
+                                <span class="pricing__currency">$</span>
+                                <span class="pricing__amount">45</span>
+                                <span class="pricing__period">/hour</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="pricing__features">
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Technical Support & Issue Resolution
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Email Support (24-hour response)
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Basic CMS Updates
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Bug Testing & Validation
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Documentation
+                            </li>
                         </ul>
+                        
+                        <a href="#contact" class="pricing__button button button--outline">
+                            Get Started
+                        </a>
                     </div>
-                </div>
-
-                <div class="case-study">
-                    <h3>Customer Support System Optimization</h3>
-                    <div class="case-study-meta">
-                        <div><strong>Client:</strong> SaaS Startup</div>
-                        <div><strong>Project:</strong> Technical Support Process Improvement</div>
-                        <div><strong>Technologies:</strong> Jira, Customer support tools</div>
-                    </div>
-                    <p><strong>Challenge:</strong> High volume of customer issues with slow resolution times</p>
-                    <p><strong>Solution:</strong> Implemented structured Jira workflow for issue tracking, created testing protocols for reproducing user problems, developed FAQ database, and established hotline procedures with 4-hour response guarantee.</p>
-                    <div class="results">
-                        <strong>Results:</strong>
-                        <ul>
-                            <li>70% faster issue resolution time</li>
-                            <li>90% customer satisfaction improvement</li>
-                            <li>50% reduction in escalated tickets</li>
+                    
+                    <div class="pricing__card pricing__card--featured">
+                        <div class="pricing__badge">Most Popular</div>
+                        <div class="pricing__header">
+                            <h3 class="pricing__title">CMS Management</h3>
+                            <div class="pricing__price">
+                                <span class="pricing__currency">$</span>
+                                <span class="pricing__amount">50</span>
+                                <span class="pricing__period">/hour</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="pricing__features">
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Full CMS Management (Jahia/WordPress)
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Multi-language Content Support
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Priority Support (4-hour response)
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Page Template Management
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Content Strategy & Planning
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Monthly Reports
+                            </li>
                         </ul>
+                        
+                        <a href="#contact" class="pricing__button button">
+                            Choose Plan
+                        </a>
                     </div>
-                </div>
-
-                <div class="case-study">
-                    <h3>Cross-Team Project Coordination</h3>
-                    <div class="case-study-meta">
-                        <div><strong>Client:</strong> Fintech Company</div>
-                        <div><strong>Project:</strong> Product Feature Launch</div>
-                        <div><strong>Technologies:</strong> Agile methodology, Sprint testing</div>
-                    </div>
-                    <p><strong>Challenge:</strong> Coordinating between development, business, and support teams</p>
-                    <p><strong>Solution:</strong> Facilitated sprint planning and validation sessions, created business requirement documentation, conducted user story testing and validation, and managed stakeholder communication throughout project.</p>
-                    <div class="results">
-                        <strong>Results:</strong>
-                        <ul>
-                            <li>On-time delivery of 8 major features</li>
-                            <li>100% acceptance rate for user stories</li>
-                            <li>Improved communication between teams</li>
+                    
+                    <div class="pricing__card">
+                        <div class="pricing__header">
+                            <h3 class="pricing__title">Project Coordination</h3>
+                            <div class="pricing__price">
+                                <span class="pricing__currency">$</span>
+                                <span class="pricing__amount">60</span>
+                                <span class="pricing__period">/hour</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="pricing__features">
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Full Project Management
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Team Training Sessions
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Business Analysis & Planning
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Cross-team Coordination
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Sprint Planning & Validation
+                            </li>
+                            <li class="pricing__feature">
+                                <i class="feature__icon">✓</i>
+                                Stakeholder Communication
+                            </li>
                         </ul>
+                        
+                        <a href="#contact" class="pricing__button button button--outline">
+                            Contact Me
+                        </a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="testimonial">
-                <p>"Lan's technical expertise and communication skills made our CMS migration seamless. Her attention to detail caught issues before they became problems."</p>
-                <div class="testimonial-author">- Project Manager, E-commerce Company</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Let's Discuss Your Project</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <div>
-                            <strong>Email:</strong><br>
-                            <a href="mailto:tuyetlan5258@gmail.com">tuyetlan5258@gmail.com</a>
+        <!-- Portfolio Section -->
+        <section class="portfolio section" id="portfolio">
+            <div class="portfolio__container container">
+                <div class="section__header">
+                    <span class="section__subtitle">My Work</span>
+                    <h2 class="section__title">
+                        Portfolio & 
+                        <span class="section__title-accent">Case Studies</span>
+                    </h2>
+                </div>
+                
+                <div class="portfolio__content">
+                    <div class="case__study">
+                        <div class="case__header">
+                            <h3 class="case__title">Multi-Language CMS Implementation</h3>
+                            <div class="case__meta">
+                                <span class="case__client">International Retail Company</span>
+                                <span class="case__type">E-commerce Platform</span>
+                                <span class="case__tech">Jahia CMS, Jira</span>
+                            </div>
+                        </div>
+                        
+                        <div class="case__content">
+                            <div class="case__challenge">
+                                <h4 class="case__subtitle">Challenge</h4>
+                                <p>Managing product content across 5 languages in Jahia CMS</p>
+                            </div>
+                            
+                            <div class="case__solution">
+                                <h4 class="case__subtitle">Solution</h4>
+                                <p>Developed streamlined content contribution workflows, created custom page templates for product categories, implemented taxonomy structure for better organization, and trained 15 local webmasters on the new system.</p>
+                            </div>
+                            
+                            <div class="case__results">
+                                <h4 class="case__subtitle">Results</h4>
+                                <div class="case__metrics">
+                                    <div class="metric__item">
+                                        <span class="metric__number">40%</span>
+                                        <span class="metric__label">Reduction in update time</span>
+                                    </div>
+                                    <div class="metric__item">
+                                        <span class="metric__number">95%</span>
+                                        <span class="metric__label">User satisfaction rate</span>
+                                    </div>
+                                    <div class="metric__item">
+                                        <span class="metric__number">0</span>
+                                        <span class="metric__label">Critical issues in 6 months</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <div>
-                            <strong>Phone:</strong><br>
-                            <a href="tel:+84352700095">+84 352 700 095</a>
+                    
+                    <div class="case__study">
+                        <div class="case__header">
+                            <h3 class="case__title">Customer Support System Optimization</h3>
+                            <div class="case__meta">
+                                <span class="case__client">SaaS Startup</span>
+                                <span class="case__type">Support Process Improvement</span>
+                                <span class="case__tech">Jira, Support Tools</span>
+                            </div>
+                        </div>
+                        
+                        <div class="case__content">
+                            <div class="case__challenge">
+                                <h4 class="case__subtitle">Challenge</h4>
+                                <p>High volume of customer issues with slow resolution times</p>
+                            </div>
+                            
+                            <div class="case__solution">
+                                <h4 class="case__subtitle">Solution</h4>
+                                <p>Implemented structured Jira workflow for issue tracking, created testing protocols for reproducing user problems, developed FAQ database, and established hotline procedures with 4-hour response guarantee.</p>
+                            </div>
+                            
+                            <div class="case__results">
+                                <h4 class="case__subtitle">Results</h4>
+                                <div class="case__metrics">
+                                    <div class="metric__item">
+                                        <span class="metric__number">70%</span>
+                                        <span class="metric__label">Faster resolution time</span>
+                                    </div>
+                                    <div class="metric__item">
+                                        <span class="metric__number">90%</span>
+                                        <span class="metric__label">Satisfaction improvement</span>
+                                    </div>
+                                    <div class="metric__item">
+                                        <span class="metric__number">50%</span>
+                                        <span class="metric__label">Reduction in escalated tickets</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <div>
-                            <strong>Location:</strong><br>
-                            Ho Chi Minh City, Vietnam
-                        </div>
-                    <div class="contact-item">
-                        <span>🕒</span>
-                        <div>
-                            <strong>Availability:</strong><br>
-                            Monday-Friday, 9 AM - 6 PM (GMT+7)
+                    
+                    <div class="testimonial">
+                        <div class="testimonial__content">
+                            <blockquote class="testimonial__quote">
+                                "Lan's technical expertise and communication skills made our CMS migration seamless. 
+                                Her attention to detail caught issues before they became problems."
+                            </blockquote>
+                            <cite class="testimonial__author">
+                                <span class="author__name">Sarah Johnson</span>
+                                <span class="author__title">Project Manager, E-commerce Company</span>
+                            </cite>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="contact-form">
-                    <h3>Quick Project Inquiry</h3>
-                    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="contact__container container">
+                <div class="section__header">
+                    <span class="section__subtitle">Get In Touch</span>
+                    <h2 class="section__title">
+                        Let's Discuss Your 
+                        <span class="section__title-accent">Project</span>
+                    </h2>
+                </div>
+                
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <h3 class="contact__title">Contact Information</h3>
+                        <p class="contact__description">
+                            Ready to start your project? Get in touch and let's discuss how I can help your business grow.
+                        </p>
+                        
+                        <div class="contact__data">
+                            <div class="contact__item">
+                                <div class="contact__icon">📧</div>
+                                <div class="contact__details">
+                                    <h4 class="contact__label">Email</h4>
+                                    <a href="mailto:tuyetlan5258@gmail.com" class="contact__value">
+                                        tuyetlan5258@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact__item">
+                                <div class="contact__icon">📱</div>
+                                <div class="contact__details">
+                                    <h4 class="contact__label">Phone</h4>
+                                    <a href="tel:+84352700095" class="contact__value">
+                                        +84 352 700 095
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact__item">
+                                <div class="contact__icon">📍</div>
+                                <div class="contact__details">
+                                    <h4 class="contact__label">Location</h4>
+                                    <span class="contact__value">Ho Chi Minh City, Vietnam</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact__item">
+                                <div class="contact__icon">🕒</div>
+                                <div class="contact__details">
+                                    <h4 class="contact__label">Availability</h4>
+                                    <span class="contact__value">Monday-Friday, 9 AM - 6 PM (GMT+7)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact__form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                         <!-- Hidden honeypot field for spam protection -->
                         <div style="display: none;">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </div>
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
+                        
+                        <h3 class="form__title">Quick Project Inquiry</h3>
+                        
+                        <div class="form__group">
+                            <label for="name" class="form__label">Name *</label>
+                            <input type="text" id="name" name="name" class="form__input" required>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                        
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email *</label>
+                            <input type="email" id="email" name="email" class="form__input" required>
                         </div>
-                        <div class="form-group">
-                            <label for="company">Company</label>
-                            <input type="text" id="company" name="company">
+                        
+                        <div class="form__group">
+                            <label for="company" class="form__label">Company</label>
+                            <input type="text" id="company" name="company" class="form__input">
                         </div>
-                        <div class="form-group">
-                            <label for="project-type">Project Type</label>
-                            <select id="project-type" name="project-type">
+                        
+                        <div class="form__group">
+                            <label for="project-type" class="form__label">Project Type</label>
+                            <select id="project-type" name="project-type" class="form__select">
                                 <option value="">Select...</option>
                                 <option value="cms-management">CMS Management</option>
                                 <option value="technical-support">Technical Support</option>
@@ -975,13 +565,16 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Project Description *</label>
-                            <textarea id="message" name="message" required placeholder="Tell me about your project..."></textarea>
+                        
+                        <div class="form__group">
+                            <label for="message" class="form__label">Project Description *</label>
+                            <textarea id="message" name="message" class="form__textarea" 
+                                    placeholder="Tell me about your project..." required></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="timeline">Timeline</label>
-                            <select id="timeline" name="timeline">
+                        
+                        <div class="form__group">
+                            <label for="timeline" class="form__label">Timeline</label>
+                            <select id="timeline" name="timeline" class="form__select">
                                 <option value="">Select...</option>
                                 <option value="immediate">Immediate (within 1 week)</option>
                                 <option value="short-term">Short-term (1-4 weeks)</option>
@@ -989,128 +582,65 @@
                                 <option value="ongoing">Ongoing support</option>
                             </select>
                         </div>
-                        <button type="submit" class="submit-btn">Send Inquiry</button>
+                        
+                        <button type="submit" class="form__submit button">
+                            Send Inquiry
+                            <i class="button__icon">→</i>
+                        </button>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <a href="#services">CMS Management</a>
-                    <a href="#services">Technical Support</a>
-                    <a href="#services">Project Coordination</a>
-                    <a href="#services">Training Services</a>
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4 class="footer__title">Services</h4>
+                    <ul class="footer__links">
+                        <li><a href="#services" class="footer__link">CMS Management</a></li>
+                        <li><a href="#services" class="footer__link">Technical Support</a></li>
+                        <li><a href="#services" class="footer__link">Project Coordination</a></li>
+                        <li><a href="#services" class="footer__link">Training Services</a></li>
+                    </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="#about">About Me</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#portfolio">Portfolio</a>
-                    <a href="#contact">Contact</a>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#about" class="footer__link">About Me</a></li>
+                        <li><a href="#pricing" class="footer__link">Pricing</a></li>
+                        <li><a href="#portfolio" class="footer__link">Portfolio</a></li>
+                        <li><a href="#contact" class="footer__link">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>📧 tuyetlan5258@gmail.com</p>
-                    <p>📱 +84 352 700 095</p>
-                    <p>📍 Ho Chi Minh City, Vietnam</p>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Contact Info</h4>
+                    <div class="footer__info">
+                        <p>📧 tuyetlan5258@gmail.com</p>
+                        <p>📱 +84 352 700 095</p>
+                        <p>📍 Ho Chi Minh City, Vietnam</p>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Lan Le. All rights reserved. | Professional Webmaster & Digital Support Services</p>
+            
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    &copy; 2025 Lan Le. All rights reserved. | Professional Webmaster & Digital Support Services
+                </p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class="scrolltop__icon">↑</i>
+    </a>
 
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Form submission with Netlify
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const form = this;
-            const formData = new FormData(form);
-            
-            // Submit to Netlify
-            fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(() => {
-                // Success message
-                alert('Thank you for your inquiry! I will get back to you within 24 hours.');
-                form.reset();
-            })
-            .catch((error) => {
-                // Error message
-                alert('Oops! There was a problem submitting your form. Please try again or email me directly.');
-                console.error('Error:', error);
-            });
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .case-study, .stat-item, .pricing-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(43, 76, 126, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #2B4C7E 0%, #1a3460 100%)';
-                header.style.backdropFilter = 'none';
-            }
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
