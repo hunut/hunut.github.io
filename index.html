@@ -34,7 +34,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
         nav {
@@ -44,26 +44,30 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
             color: #F39C12;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
         }
 
         .nav-links a:hover {
             color: #F39C12;
+            background: rgba(243, 156, 18, 0.1);
         }
 
         .mobile-menu {
@@ -79,82 +83,102 @@
         .hero {
             background: linear-gradient(135deg, #2B4C7E 0%, #1a3460 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 140px 0 100px;
             text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            width: 100%;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            opacity: 0.9;
         }
 
         .cta-button {
             display: inline-block;
             background: #F39C12;
             color: white;
-            padding: 15px 30px;
+            padding: 18px 35px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
+            font-size: 1.1rem;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
         }
 
         .cta-button:hover {
             background: #e67e22;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
         }
 
-        /* Services Preview */
-        .services-preview {
-            padding: 80px 0;
+        /* About Section - Moved after Hero */
+        .about {
+            padding: 100px 0;
             background: #F8F9FA;
         }
 
-        .services-preview h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2B4C7E;
-        }
-
-        .services-grid {
+        .about-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+        .about-image {
             text-align: center;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
+        .about-image img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 50%;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border: 8px solid white;
         }
 
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
+        .about-text h2 {
+            font-size: 2.8rem;
             color: #2B4C7E;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #F39C12;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
         }
 
         /* Stats Section */
@@ -172,74 +196,195 @@
         }
 
         .stat-item {
-            padding: 1rem;
+            padding: 1.5rem;
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
             color: #F39C12;
             margin-bottom: 0.5rem;
         }
 
-        /* About Section */
-        .about {
-            padding: 80px 0;
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
+        /* Services Section */
+        .services-preview {
+            padding: 100px 0;
+            background: white;
         }
 
-        .about-image {
+        .services-preview h2 {
             text-align: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 50%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
             color: #2B4C7E;
-            margin-bottom: 1rem;
         }
 
-        .about-text p {
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: #F8F9FA;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+            border-top: 5px solid #F39C12;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            color: #2B4C7E;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #555;
             font-size: 1.1rem;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: #F8F9FA;
         }
 
-        .skill-item {
-            background: #F8F9FA;
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid #F39C12;
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            color: #2B4C7E;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #F39C12;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #F39C12;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            color: #2B4C7E;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            color: #F39C12;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-period {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features li {
+            padding: 0.5rem 0;
+            color: #555;
+        }
+
+        .plan-features li::before {
+            content: "✓";
+            color: #F39C12;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .plan-button {
+            background: #2B4C7E;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .plan-button:hover {
+            background: #1a3460;
+        }
+
+        .featured .plan-button {
+            background: #F39C12;
+        }
+
+        .featured .plan-button:hover {
+            background: #e67e22;
         }
 
         /* Portfolio Section */
         .portfolio {
-            padding: 80px 0;
-            background: #F8F9FA;
+            padding: 100px 0;
+            background: white;
         }
 
         .portfolio h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
             color: #2B4C7E;
         }
 
@@ -249,67 +394,112 @@
         }
 
         .case-study {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: #F8F9FA;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .case-study:hover {
+            transform: translateY(-5px);
         }
 
         .case-study h3 {
             color: #2B4C7E;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
         }
 
         .case-study-meta {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 0.9rem;
             color: #666;
         }
 
         .results {
-            background: #F8F9FA;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            border-left: 5px solid #F39C12;
+        }
+
+        .testimonial {
+            background: #2B4C7E;
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-author {
+            margin-top: 1.5rem;
+            font-weight: 600;
+            color: #F39C12;
+            font-style: normal;
         }
 
         /* Contact Section */
         .contact {
-            padding: 80px 0;
+            padding: 100px 0;
+            background: #F8F9FA;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            color: #2B4C7E;
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
         }
 
         .contact-info {
             background: #2B4C7E;
             color: white;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 2.5rem;
+            border-radius: 15px;
         }
 
         .contact-info h3 {
             color: #F39C12;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item span {
+            font-size: 1.5rem;
         }
 
         .contact-form {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            color: #2B4C7E;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
         }
 
         .form-group {
@@ -327,9 +517,9 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             border: 2px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1rem;
             transition: border-color 0.3s;
         }
@@ -342,31 +532,32 @@
         }
 
         .form-group textarea {
-            height: 120px;
+            height: 130px;
             resize: vertical;
         }
 
         .submit-btn {
             background: #F39C12;
             color: white;
-            padding: 12px 30px;
+            padding: 15px 35px;
             border: none;
-            border-radius: 8px;
+            border-radius: 25px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
 
         .submit-btn:hover {
             background: #e67e22;
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
-            background: #2B4C7E;
+            background: #1a3460;
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 0 2rem;
             text-align: center;
         }
 
@@ -380,12 +571,15 @@
         .footer-section h4 {
             color: #F39C12;
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         .footer-section a {
             color: white;
             text-decoration: none;
             transition: color 0.3s;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .footer-section a:hover {
@@ -393,15 +587,28 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid #1a3460;
-            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
             margin-top: 2rem;
+            opacity: 0.8;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #2B4C7E;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .mobile-menu {
@@ -409,39 +616,40 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2rem;
             }
 
             .contact-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .case-study-meta {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 0.5rem;
             }
-        }
 
-        /* Utility Classes */
-        .text-center {
-            text-align: center;
-        }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
 
-        .mb-2 {
-            margin-bottom: 2rem;
-        }
+            .pricing-card.featured {
+                transform: none;
+            }
 
-        .section-padding {
-            padding: 80px 0;
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Animations */
@@ -460,21 +668,14 @@
             animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Testimonial */
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-            text-align: center;
-            font-style: italic;
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
         }
 
-        .testimonial-author {
-            margin-top: 1rem;
-            font-weight: 600;
-            color: #2B4C7E;
+        /* Section spacing */
+        section {
+            scroll-margin-top: 80px;
         }
     </style>
 </head>
@@ -482,7 +683,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">Lan Le</div>
+            <a href="#home" class="logo">Lan Le</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -498,56 +699,10 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Expert Webmaster & Digital Support Services</h1>
-            <p>Helping businesses manage their digital presence with 5+ years of experience in CMS, customer support, and project management</p>
-            <a href="#contact" class="cta-button">Get Free Website Consultation</a>
-        </div>
-    </section>
-
-    <!-- Services Preview -->
-    <section id="services" class="services-preview">
-        <div class="container">
-            <h2>My Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>CMS Management</h3>
-                    <p>Jahia, WordPress, content updates, and multi-language website management with expert precision.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛠️</div>
-                    <h3>Customer Support</h3>
-                    <p>Hotline management, issue resolution, and comprehensive technical support for your business needs.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📋</div>
-                    <h3>Project Coordination</h3>
-                    <p>Working with dev teams, training sessions, and seamless project management from start to finish.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div>Years Experience</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100+</div>
-                    <div>Projects Supported</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">98%</div>
-                    <div>Client Satisfaction</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2</div>
-                    <div>Languages (Vietnamese/English)</div>
-                </div>
+            <div class="hero-content">
+                <h1>Expert Webmaster & Digital Support Services</h1>
+                <p>Helping businesses manage their digital presence with 5+ years of experience in CMS, customer support, and project management</p>
+                <a href="#contact" class="cta-button">Get Free Website Consultation</a>
             </div>
         </div>
     </section>
@@ -557,7 +712,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img =src="images/profile.jpg" alt="Lan Le - Professional Photo">
+                    <img src="images/profile.JPG" alt="Lan Le - Professional Photo">
                 </div>
                 <div class="about-text">
                     <h2>About Me</h2>
@@ -584,6 +739,106 @@
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Projects Supported</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Languages (Vietnamese/English)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-preview">
+        <div class="container">
+            <h2>My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>CMS Management</h3>
+                    <p>Jahia, WordPress, content updates, and multi-language website management with expert precision and attention to detail.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Customer Support</h3>
+                    <p>Hotline management, issue resolution, and comprehensive technical support for your business needs with 4-hour response time.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Project Coordination</h3>
+                    <p>Working with dev teams, training sessions, and seamless project management from planning to successful delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Service Packages</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Basic Support</div>
+                    <div class="plan-price">$45</div>
+                    <div class="plan-period">per hour</div>
+                    <ul class="plan-features">
+                        <li>Technical Support & Issue Resolution</li>
+                        <li>Email Support (24-hour response)</li>
+                        <li>Basic CMS Updates</li>
+                        <li>Bug Testing & Validation</li>
+                        <li>Documentation</li>
+                    </ul>
+                    <a href="#contact" class="plan-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="plan-name">CMS Management</div>
+                    <div class="plan-price">$50</div>
+                    <div class="plan-period">per hour</div>
+                    <ul class="plan-features">
+                        <li>Full CMS Management (Jahia/WordPress)</li>
+                        <li>Multi-language Content Support</li>
+                        <li>Priority Support (4-hour response)</li>
+                        <li>Page Template Management</li>
+                        <li>Content Strategy & Planning</li>
+                        <li>Monthly Reports</li>
+                    </ul>
+                    <a href="#contact" class="plan-button">Most Popular</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-name">Project Coordination</div>
+                    <div class="plan-price">$60</div>
+                    <div class="plan-period">per hour</div>
+                    <ul class="plan-features">
+                        <li>Full Project Management</li>
+                        <li>Team Training Sessions</li>
+                        <li>Business Analysis & Planning</li>
+                        <li>Cross-team Coordination</li>
+                        <li>Sprint Planning & Validation</li>
+                        <li>Stakeholder Communication</li>
+                    </ul>
+                    <a href="#contact" class="plan-button">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
@@ -592,9 +847,9 @@
                 <div class="case-study">
                     <h3>Multi-Language CMS Implementation</h3>
                     <div class="case-study-meta">
-                        <span><strong>Client:</strong> International Retail Company</span>
-                        <span><strong>Project:</strong> E-commerce Platform Content Management</span>
-                        <span><strong>Technologies:</strong> Jahia CMS, Jira, Multi-language content</span>
+                        <div><strong>Client:</strong> International Retail Company</div>
+                        <div><strong>Project:</strong> E-commerce Platform Content Management</div>
+                        <div><strong>Technologies:</strong> Jahia CMS, Jira, Multi-language content</div>
                     </div>
                     <p><strong>Challenge:</strong> Managing product content across 5 languages in Jahia CMS</p>
                     <p><strong>Solution:</strong> Developed streamlined content contribution workflows, created custom page templates for product categories, implemented taxonomy structure for better organization, and trained 15 local webmasters on the new system.</p>
@@ -611,9 +866,9 @@
                 <div class="case-study">
                     <h3>Customer Support System Optimization</h3>
                     <div class="case-study-meta">
-                        <span><strong>Client:</strong> SaaS Startup</span>
-                        <span><strong>Project:</strong> Technical Support Process Improvement</span>
-                        <span><strong>Technologies:</strong> Jira, Customer support tools</span>
+                        <div><strong>Client:</strong> SaaS Startup</div>
+                        <div><strong>Project:</strong> Technical Support Process Improvement</div>
+                        <div><strong>Technologies:</strong> Jira, Customer support tools</div>
                     </div>
                     <p><strong>Challenge:</strong> High volume of customer issues with slow resolution times</p>
                     <p><strong>Solution:</strong> Implemented structured Jira workflow for issue tracking, created testing protocols for reproducing user problems, developed FAQ database, and established hotline procedures with 4-hour response guarantee.</p>
@@ -630,9 +885,9 @@
                 <div class="case-study">
                     <h3>Cross-Team Project Coordination</h3>
                     <div class="case-study-meta">
-                        <span><strong>Client:</strong> Fintech Company</span>
-                        <span><strong>Project:</strong> Product Feature Launch</span>
-                        <span><strong>Technologies:</strong> Agile methodology, Sprint testing</span>
+                        <div><strong>Client:</strong> Fintech Company</div>
+                        <div><strong>Project:</strong> Product Feature Launch</div>
+                        <div><strong>Technologies:</strong> Agile methodology, Sprint testing</div>
                     </div>
                     <p><strong>Challenge:</strong> Coordinating between development, business, and support teams</p>
                     <p><strong>Solution:</strong> Facilitated sprint planning and validation sessions, created business requirement documentation, conducted user story testing and validation, and managed stakeholder communication throughout project.</p>
@@ -657,7 +912,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="text-center mb-2">Let's Discuss Your Project</h2>
+            <h2>Let's Discuss Your Project</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
@@ -681,7 +936,6 @@
                             <strong>Location:</strong><br>
                             Ho Chi Minh City, Vietnam
                         </div>
-                    </div>
                     <div class="contact-item">
                         <span>🕒</span>
                         <div>
@@ -693,7 +947,11 @@
 
                 <div class="contact-form">
                     <h3>Quick Project Inquiry</h3>
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <!-- Hidden honeypot field for spam protection -->
+                        <div style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </div>
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -744,16 +1002,17 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <p><a href="#services">CMS Management</a></p>
-                    <p><a href="#services">Technical Support</a></p>
-                    <p><a href="#services">Project Coordination</a></p>
-                    <p><a href="#services">Training Services</a></p>
+                    <a href="#services">CMS Management</a>
+                    <a href="#services">Technical Support</a>
+                    <a href="#services">Project Coordination</a>
+                    <a href="#services">Training Services</a>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <p><a href="#about">About Me</a></p>
-                    <p><a href="#portfolio">Portfolio</a></p>
-                    <p><a href="#contact">Contact</a></p>
+                    <a href="#about">About Me</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
@@ -788,13 +1047,39 @@
         const navLinks = document.querySelector('.nav-links');
 
         mobileMenu.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.classList.toggle('active');
         });
 
-        // Form submission
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Form submission with Netlify
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your inquiry! I will get back to you within 24 hours.');
+            
+            const form = this;
+            const formData = new FormData(form);
+            
+            // Submit to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // Success message
+                alert('Thank you for your inquiry! I will get back to you within 24 hours.');
+                form.reset();
+            })
+            .catch((error) => {
+                // Error message
+                alert('Oops! There was a problem submitting your form. Please try again or email me directly.');
+                console.error('Error:', error);
+            });
         });
 
         // Add animation on scroll
@@ -811,8 +1096,20 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.service-card, .case-study, .stat-item').forEach(el => {
+        document.querySelectorAll('.service-card, .case-study, .stat-item, .pricing-card').forEach(el => {
             observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(43, 76, 126, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2B4C7E 0%, #1a3460 100%)';
+                header.style.backdropFilter = 'none';
+            }
         });
     </script>
 </body>
