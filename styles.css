@@ -145,7 +145,8 @@ button {
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
-  margin-inline: 1.5rem;
+  margin: 0 auto;        /* Properly centers the container */
+  padding: 0 1.5rem;     /* Provides even side spacing */
 }
 
 .grid {
@@ -427,9 +428,10 @@ button {
 
 .about__data {
   display: grid;
-  grid-template-columns: .8fr 1fr;
+  grid-template-columns: 1fr 1fr;  /* Equal columns */
   align-items: center;
   gap: 3rem;
+  justify-items: center;
 }
 
 .about__image {
@@ -1201,9 +1203,11 @@ button {
   }
 
   .about__data {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Equal columns */
+    align-items: center;
+    gap: 3rem;
+    justify-items: center;
   }
 
   .about__image {
