@@ -1,57 +1,98 @@
-/*=============== IMPROVED MOBILE MENU ===============*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close'),
-      navLinks = document.querySelectorAll('.nav__link');
+/*=============== BULLETPROOF MOBILE MENU ===============*/
+// Get elements
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toggle');
+const navClose = document.getElementById('nav-close');
+const navLinks = document.querySelectorAll('.nav__link');
 
-// Show menu
-if(navToggle){
-    navToggle.addEventListener('click', () => {
+// Menu state tracking
+let isMenuOpen = false;
+
+// Universal close function
+function closeMenu() {
+    if (navMenu) {
+        navMenu.classList.remove('show-menu');
+        document.body.classList.remove('menu-open');
+        isMenuOpen = false;
+    }
+}
+
+// Universal open function
+function openMenu() {
+    if (navMenu) {
         navMenu.classList.add('show-menu');
-        document.body.classList.add('menu-open'); // Prevent scrolling
+        document.body.classList.add('menu-open');
+        isMenuOpen = true;
+    }
+}
+
+// Force close on initial load
+document.addEventListener('DOMContentLoaded', closeMenu);
+window.addEventListener('load', closeMenu);
+
+// Close on hash change (section navigation)
+window.addEventListener('hashchange', closeMenu);
+
+// Toggle menu on hamburger click
+if (navToggle) {
+    navToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (isMenuOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
 }
 
-// Hide menu
-if(navClose){
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu');
-        document.body.classList.remove('menu-open');
+// Close menu on X button click
+if (navClose) {
+    navClose.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeMenu();
     });
 }
 
-// Close menu when clicking on nav links
+// Close menu on nav link click
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu');
-        document.body.classList.remove('menu-open');
+    link.addEventListener('click', function(e) {
+        closeMenu();
     });
 });
 
 // Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-        navMenu.classList.remove('show-menu');
-        document.body.classList.remove('menu-open');
+document.addEventListener('click', function(e) {
+    if (isMenuOpen && 
+        navMenu && 
+        !navMenu.contains(e.target) && 
+        !navToggle.contains(e.target)) {
+        closeMenu();
     }
 });
 
 // Close menu on escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        navMenu.classList.remove('show-menu');
-        document.body.classList.remove('menu-open');
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && isMenuOpen) {
+        closeMenu();
     }
 });
 
-// Handle window resize
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        navMenu.classList.remove('show-menu');
-        document.body.classList.remove('menu-open');
+// Close menu on window resize
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768 && isMenuOpen) {
+        closeMenu();
     }
 });
 
+// Close menu on any anchor link click (extra safety)
+document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        setTimeout(closeMenu, 100);
+    }
+});
 /*=============== ADD BLUR TO HEADER ===============*/
 const blurHeader = () =>{
     const header = document.getElementById('header');

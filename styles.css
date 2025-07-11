@@ -1492,3 +1492,11 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
 }
+/* Force menu closed unless explicitly opened */
+@media screen and (max-width: 768px) {
+    body:not(.menu-open) .nav__menu {
+        top: -100% !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+}
