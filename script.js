@@ -1,33 +1,56 @@
-/*=============== SHOW MENU ===============*/
+/*=============== IMPROVED MOBILE MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close');
+      navClose = document.getElementById('nav-close'),
+      navLinks = document.querySelectorAll('.nav__link');
 
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
+// Show menu
 if(navToggle){
-    navToggle.addEventListener('click', () =>{
+    navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
+        document.body.classList.add('menu-open'); // Prevent scrolling
     });
 }
 
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
+// Hide menu
 if(navClose){
-    navClose.addEventListener('click', () =>{
+    navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
+        document.body.classList.remove('menu-open');
     });
 }
 
-/*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll('.nav__link');
+// Close menu when clicking on nav links
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('show-menu');
+        document.body.classList.remove('menu-open');
+    });
+});
 
-const linkAction = () =>{
-    const navMenu = document.getElementById('nav-menu');
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu');
-}
-navLink.forEach(n => n.addEventListener('click', linkAction));
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.remove('show-menu');
+        document.body.classList.remove('menu-open');
+    }
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        navMenu.classList.remove('show-menu');
+        document.body.classList.remove('menu-open');
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        navMenu.classList.remove('show-menu');
+        document.body.classList.remove('menu-open');
+    }
+});
 
 /*=============== ADD BLUR TO HEADER ===============*/
 const blurHeader = () =>{
@@ -460,6 +483,7 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const navMenu = document.getElementById('nav-menu');
         navMenu.classList.remove('show-menu');
+        document.body.classList.remove('menu-open');
     }
 });
 
@@ -519,61 +543,4 @@ document.addEventListener('click', (e) => {
     }
 });
 
-/*=============== DARK MODE TOGGLE (Optional) ===============*/
-const createDarkModeToggle = () => {
-    const darkModeToggle = document.createElement('button');
-    darkModeToggle.innerHTML = '🌙';
-    darkModeToggle.className = 'dark-mode-toggle';
-    darkModeToggle.style.cssText = `
-        position: fixed;
-        top: 50%;
-        right: 1rem;
-        transform: translateY(-50%);
-        background: var(--container-color);
-        border: 2px solid var(--first-color);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-        cursor: pointer;
-        z-index: var(--z-tooltip);
-        transition: var(--transition);
-        box-shadow: 0 4px 12px var(--shadow-color);
-    `;
-    
-    // Add dark mode styles
-    const darkModeStyles = document.createElement('style');
-    darkModeStyles.textContent = `
-        [data-theme="dark"] {
-            --title-color: hsl(var(--primary-hue), 15%, 85%);
-            --text-color: hsl(var(--primary-hue), 8%, 65%);
-            --text-color-light: hsl(var(--primary-hue), 4%, 55%);
-            --body-color: hsl(var(--primary-hue), 20%, 10%);
-            --container-color: hsl(var(--primary-hue), 16%, 15%);
-        }
-    `;
-    document.head.appendChild(darkModeStyles);
-    
-    // Toggle functionality
-    darkModeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        
-        darkModeToggle.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
-    });
-    
-    // Check saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    darkModeToggle.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
-    
-    document.body.appendChild(darkModeToggle);
-};
-
-// Uncomment to enable dark mode toggle
-// createDarkModeToggle();
-
-console.log('Lan Le Portfolio - Professional JavaScript loaded successfully! 🚀');
+console.log('Lan Le Portfolio - Updated JavaScript loaded successfully! 🚀');
